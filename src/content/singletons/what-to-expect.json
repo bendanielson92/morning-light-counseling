@@ -1,0 +1,41 @@
+{
+  "pageTitle": "What to Expect",
+  "intro": "No man likes walking into something blind. Here's exactly how getting started works — three steps, no pressure, no surprises.",
+  "steps": [
+    {
+      "title": "Reach out",
+      "description": "Fill out the short inquiry form on the contact page (or call). It takes about two minutes — just enough for me to know who you are and how to reach you. I respond within two business days."
+    },
+    {
+      "title": "Complete intake paperwork",
+      "description": "I'll send you a link to a secure client portal where you'll fill out intake paperwork and pick a time for your first session. Everything is online and confidential."
+    },
+    {
+      "title": "A brief phone call",
+      "description": "Before your first appointment, we'll talk briefly by phone. You can ask anything, I'll answer honestly, and we'll make sure this is the right fit before you invest a full session."
+    }
+  ],
+  "closing": "After that, we get to work. Change takes time — counseling is gradual, deliberate work, not a quick fix — but you won't be doing it alone, and you'll know where we're headed. The aim isn't just to feel better for a week. It's to understand your story within God's redemptive plan and build something that holds.",
+  "faqs": [
+    {
+      "question": "Do you take my insurance?",
+      "answer": "I accept most major plans, including Highmark, Blue Cross/Blue Shield, Capital Blue Cross, Geisinger, UnitedHealthcare/UBH, Optum, Aetna, and Quest EAP. I'm not able to accept Medicare or Medicaid. If you don't see your plan listed, reach out — we'll figure out what your options are."
+    },
+    {
+      "question": "What does it cost without insurance?",
+      "answer": "Self-pay sessions are $125. If you're uninsured or choose not to use insurance, you're entitled to a Good Faith Estimate of costs before we begin — see the Good Faith Estimate page for details."
+    },
+    {
+      "question": "Can we meet online?",
+      "answer": "Yes. I see men in person at my Manheim office and by secure video anywhere in Pennsylvania. Plenty of men do their sessions from a parked truck on a lunch break — whatever works."
+    },
+    {
+      "question": "Is what I say confidential?",
+      "answer": "Yes. What you share in counseling is protected by law and professional ethics. The narrow exceptions — like an imminent risk of serious harm to yourself or someone else, or suspected abuse of a child — are ones I'll walk you through plainly before we start."
+    },
+    {
+      "question": "How long will counseling take?",
+      "answer": "It depends on what we're working on. Some men come for a season — a few months around a specific struggle. Others stay longer because the work keeps paying off. We'll check the compass regularly, and you're never locked in."
+    }
+  ]
+}

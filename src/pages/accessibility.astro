@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import settings from '../content/singletons/settings.json';
+---
+
+<Layout
+  title="Accessibility | Morning Light Counseling"
+  description="Morning Light Counseling's commitment to an accessible website for all visitors."
+>
+  <PageHero title="Accessibility" />
+
+  <article class="prose-ml mx-auto max-w-3xl px-4 pb-16 text-lg sm:px-6">
+    <p>
+      Morning Light Counseling wants every man who needs help to be able to find it — including visitors who use
+      screen readers, keyboard navigation, or other assistive technology.
+    </p>
+
+    <h2>What this site does</h2>
+    <ul>
+      <li>Built to meet <strong>WCAG 2.1 Level AA</strong> guidelines</li>
+      <li>Full keyboard navigation, with a visible focus indicator and a skip-to-content link</li>
+      <li>Text and background colors chosen for sufficient contrast</li>
+      <li>Meaningful alternative text on images and properly structured headings and landmarks</li>
+      <li>Respects your system's reduced-motion preference</li>
+      <li>Readable and usable at 200% zoom and on screens of any size</li>
+    </ul>
+
+    <h2>Found a problem?</h2>
+    <p>
+      If any part of this site is difficult for you to use, please say so — it will get fixed. Email
+      {settings.email} or call {settings.phone}, and if the website is the barrier, we're glad to handle scheduling
+      entirely by phone.
+    </p>
+  </article>
+</Layout>

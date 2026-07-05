@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Prose from '../components/Prose.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import page from '../content/singletons/mens-counseling.json';
+---
+
+<Layout
+  title="Men's Counseling | Morning Light Counseling — Manheim, PA"
+  description="Counseling built exclusively for men. The cost of carrying it alone is real — the way back starts with one honest conversation. Manheim, PA & online."
+>
+  <PageHero title={page.pageTitle} tagline={page.heroTagline} />
+
+  {
+    page.sections.map((section, i) => (
+      <section class:list={[i % 2 === 1 ? 'bg-gold-50 border-y border-gold-200' : '']}>
+        <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-14">
+          <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">{section.heading}</h2>
+          <Prose text={section.body} class="mt-5" />
+        </div>
+      </section>
+    ))
+  }
+
+  <FaqList faqs={page.faqs} />
+  <CtaBand
+    heading="One honest conversation. That's the first step."
+    body="Fill out a short form, get a reply within two business days, and talk it through by phone before committing to anything."
+  />
+</Layout>

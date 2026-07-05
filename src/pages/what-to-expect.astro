@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Prose from '../components/Prose.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import page from '../content/singletons/what-to-expect.json';
+import settings from '../content/singletons/settings.json';
+---
+
+<Layout
+  title="What to Expect | Morning Light Counseling — Manheim, PA"
+  description="How counseling at Morning Light starts: a short inquiry, secure intake paperwork, and a phone call before your first session. Rates, insurance, and telehealth details."
+>
+  <PageHero title={page.pageTitle} tagline={page.intro} />
+
+  <section class="mx-auto max-w-4xl px-4 pb-4 sm:px-6" aria-label="Steps to get started">
+    <ol class="grid gap-6 md:grid-cols-3">
+      {
+        page.steps.map((step, i) => (
+          <li class="rounded-lg border border-gold-200 bg-white p-6 shadow-sm">
+            <span
+              aria-hidden="true"
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-gold-500 font-display text-lg font-bold text-ink"
+            >
+              {i + 1}
+            </span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-800">{step.title}</h2>
+            <p class="mt-2">{step.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">Then the real work begins</h2>
+    <Prose text={page.closing} class="mt-5 text-lg" />
+  </section>
+
+  <section class="border-y border-gold-200 bg-gold-100/60">
+    <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+      <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">The practical details</h2>
+      <dl class="mt-6 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+        <div>
+          <dt class="font-semibold text-forest-800">Location</dt>
+          <dd class="mt-1">{settings.addressStreet}, {settings.addressCity}. {settings.telehealthNote}</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-forest-800">Self-pay rate</dt>
+          <dd class="mt-1">
+            {settings.selfPayRate} — see the <a href="/good-faith-estimate" class="text-gold-700 underline underline-offset-2">Good Faith Estimate</a> notice.
+          </dd>
+        </div>
+        {
+          settings.sessionLength && (
+            <div>
+              <dt class="font-semibold text-forest-800">Session length</dt>
+              <dd class="mt-1">{settings.sessionLength}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt class="font-semibold text-forest-800">Insurance accepted</dt>
+          <dd class="mt-1">{settings.insurances.join(', ')}. Medicare and Medicaid are not accepted.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-forest-800">Who I see</dt>
+          <dd class="mt-1">Men and boys ages 12 and up.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <FaqList faqs={page.faqs} />
+  <CtaBand />
+</Layout>

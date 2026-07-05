@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Prose from '../components/Prose.astro';
+import CtaBand from '../components/CtaBand.astro';
+import about from '../content/singletons/about.json';
+---
+
+<Layout
+  title="About Billy | Morning Light Counseling — Manheim, PA"
+  description="Billy is a Licensed Professional Counselor in Pennsylvania and founder of Morning Light Counseling, a faith-based practice built exclusively for men."
+>
+  <PageHero title={about.pageTitle} tagline={about.intro} />
+
+  <section class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[2fr_1fr] md:py-16">
+    <div>
+      <Prose text={about.bio} class="text-lg" />
+      <h2 class="mt-12 font-display text-2xl text-forest-800 sm:text-3xl">{about.approachHeading}</h2>
+      <Prose text={about.approachBody} class="mt-5 text-lg" />
+    </div>
+    <div>
+      <img
+        src={about.headshot}
+        alt="Billy, Licensed Professional Counselor and founder of Morning Light Counseling"
+        class="rounded-lg shadow-md"
+        width="864"
+        height="1155"
+        loading="lazy"
+      />
+      <ul class="mt-8 space-y-3 rounded-lg border border-gold-200 bg-gold-50 p-6">
+        {
+          about.credentials.map((c) => (
+            <li class="flex gap-3">
+              <span aria-hidden="true" class="mt-1 text-gold-600">✦</span>
+              <span>{c}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-y border-gold-200 bg-gold-100/60">
+    <figure class="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6">
+      <blockquote class="font-display text-2xl italic leading-relaxed text-forest-800">
+        &ldquo;{about.quote}&rdquo;
+      </blockquote>
+      <figcaption class="mt-4 font-semibold text-gold-700">— {about.quoteAttribution}</figcaption>
+    </figure>
+  </section>
+
+  <CtaBand
+    heading="Wondering if this is a fit?"
+    body="That's exactly what the free intro phone call is for. Reach out and let's talk it through — no obligation."
+  />
+</Layout>

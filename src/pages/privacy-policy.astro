@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import settings from '../content/singletons/settings.json';
+---
+
+<Layout
+  title="Privacy Policy | Morning Light Counseling"
+  description="How Morning Light Counseling handles information submitted through this website."
+>
+  <PageHero title="Website Privacy Policy" />
+
+  <article class="prose-ml mx-auto max-w-3xl px-4 pb-16 text-lg sm:px-6">
+    <p><em>Last updated: July 2026</em></p>
+
+    <h2>The short version</h2>
+    <p>
+      This website collects as little information as possible, uses it only to respond to you, and never sells or
+      shares it for marketing. Detailed health information should not be submitted through this website — that
+      conversation happens privately, by phone or through the secure client portal.
+    </p>
+
+    <h2>What this website collects</h2>
+    <p>
+      If you submit the contact form, we receive the information you enter: your name, email address, phone number,
+      voicemail preference, payment type, a general reason for reaching out, and how you heard about the practice.
+      This information is transmitted over an encrypted connection (HTTPS) and delivered directly to the practice's
+      email. It is used solely to respond to your inquiry and is not shared with third parties for marketing, sold,
+      or used for advertising.
+    </p>
+    <p>
+      This site uses privacy-respecting, aggregate analytics (page counts and similar) and does not use advertising
+      trackers, social media pixels, or chatbots.
+    </p>
+
+    <h2>What this website is not</h2>
+    <p>
+      The contact form is an inquiry form, not a medical record, and submitting it does not create a
+      counselor–client relationship. Please do not include detailed health information, symptoms, or history in the
+      form. Once you become a client, all clinical information is collected and stored in a HIPAA-compliant
+      electronic health record system, and you will receive a full <strong>Notice of Privacy Practices</strong> —
+      the document that governs how your protected health information is used — as part of intake paperwork. A copy
+      is available on request at any time.
+    </p>
+
+    <h2>Client confidentiality</h2>
+    <p>
+      What clients share in counseling is confidential and protected by Pennsylvania law and professional ethics.
+      The limited exceptions (such as imminent risk of serious harm to self or others, or suspected abuse of a
+      child or vulnerable adult) are explained plainly before counseling begins.
+    </p>
+
+    <h2>External services</h2>
+    <p>
+      The client portal (scheduling and intake paperwork) is provided by CarePatron, a HIPAA-compliant practice
+      management platform, and is governed by its own privacy practices. Links to the portal open in a new tab and
+      are labeled.
+    </p>
+
+    <h2>Questions</h2>
+    <p>
+      Contact {settings.email} or call {settings.phone} with any questions about privacy — including requests to
+      correct or delete information you've submitted through this website.
+    </p>
+  </article>
+</Layout>

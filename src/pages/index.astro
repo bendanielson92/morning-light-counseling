@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Prose from '../components/Prose.astro';
+import CtaBand from '../components/CtaBand.astro';
+import home from '../content/singletons/homepage.json';
+import settings from '../content/singletons/settings.json';
+
+const services = (await getCollection('services')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const insuranceShort = settings.insurances.slice(0, 4).join(', ');
+---
+
+<Layout
+  title="Morning Light Counseling | Christian Counseling for Men — Manheim, PA"
+  description="Faith-based, hope-focused counseling for men in Manheim, PA and online across Pennsylvania. Anxiety, depression, anger, habits, and marriage — most major insurance accepted."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-gold-200 via-gold-100 to-cream">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -right-24 -top-24 hidden h-96 w-96 opacity-20 md:block"
+      style="background: radial-gradient(closest-side, var(--color-gold-500), transparent 70%);"
+    >
+    </div>
+    <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-24">
+      <div class="max-w-2xl">
+        <h1 class="font-display text-4xl font-bold leading-tight text-ink sm:text-6xl">
+          {home.heroTitle}
+        </h1>
+        <p class="mt-6 text-xl leading-relaxed text-forest-800">{home.heroSubtitle}</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/contact" class="btn-gold text-lg">{home.heroCtaLabel}</a>
+          <a href="/what-to-expect" class="btn-outline text-lg">What to Expect</a>
+        </div>
+      </div>
+    </div>
+    <!-- Trust strip -->
+    <div class="border-t border-gold-300/60 bg-cream/70 backdrop-blur">
+      <ul class="mx-auto flex max-w-6xl flex-wrap gap-x-10 gap-y-2 px-4 py-4 text-forest-800 sm:px-6">
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="text-gold-600">✦</span> Licensed Professional Counselor (PA)
+        </li>
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="text-gold-600">✦</span> {settings.telehealthNote}
+        </li>
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="text-gold-600">✦</span> {insuranceShort} &amp; more accepted
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-20">
+    <div>
+      <h2 class="font-display text-3xl text-forest-800 sm:text-4xl">{home.welcomeHeading}</h2>
+      <Prose text={home.welcomeBody} class="mt-6" />
+    </div>
+    <img
+      src="/images/brand/office.webp"
+      alt="The Morning Light Counseling office in Manheim, Pennsylvania"
+      class="rounded-lg shadow-md"
+      width="1204"
+      height="1020"
+      loading="lazy"
+    />
+  </section>
+
+  <!-- Services -->
+  <section class="bg-gold-50">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+      <h2 class="font-display text-3xl text-forest-800 sm:text-4xl">{home.servicesHeading}</h2>
+      <p class="mt-4 max-w-2xl text-lg">{home.servicesIntro}</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          services.map((s) => (
+            <a
+              href={`/counseling/${s.id}`}
+              class="group flex flex-col rounded-lg border border-gold-200 bg-cream p-6 shadow-sm transition-shadow hover:border-gold-400 hover:shadow-md"
+            >
+              <h3 class="font-display text-xl font-semibold text-forest-800 group-hover:text-gold-700">
+                {s.data.navTitle}
+              </h3>
+              <p class="mt-3 flex-1 text-ink/90">{s.data.summary}</p>
+              <span class="mt-4 font-semibold text-gold-700">
+                Learn more <span aria-hidden="true">→</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Isolation / bridge to Men's Counseling -->
+  <section class="bg-forest-800 text-cream">
+    <div class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 md:py-20">
+      <h2 class="font-display text-3xl sm:text-4xl">{home.isolationHeading}</h2>
+      <Prose text={home.isolationBody} class="mx-auto mt-6 text-left text-forest-100 sm:text-center" />
+      <a href="/mens-counseling" class="btn-gold mt-8">{home.isolationCtaLabel}</a>
+    </div>
+  </section>
+
+  <!-- What counseling is -->
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20">
+    <h2 class="font-display text-3xl text-forest-800 sm:text-4xl">{home.counselingHeading}</h2>
+    <Prose text={home.counselingBody} class="mt-6" />
+  </section>
+
+  <!-- Insurance & rates -->
+  <section class="border-y border-gold-200 bg-gold-100/60">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">Insurance &amp; rates</h2>
+      <ul class="mt-5 flex flex-wrap gap-3" aria-label="Insurance plans accepted">
+        {
+          settings.insurances.map((plan) => (
+            <li class="rounded-full border border-gold-300 bg-cream px-4 py-1.5 text-forest-800">{plan}</li>
+          ))
+        }
+      </ul>
+      <p class="mt-5 max-w-2xl">
+        Self-pay: <strong>{settings.selfPayRate}</strong>. Medicare and Medicaid are not accepted. Paying
+        without insurance? You're entitled to a <a href="/good-faith-estimate" class="text-gold-700 underline underline-offset-2 hover:text-gold-800">Good Faith Estimate</a> of costs before starting.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

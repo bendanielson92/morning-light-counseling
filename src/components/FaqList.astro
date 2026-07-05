@@ -1,0 +1,38 @@
+---
+interface Props {
+  heading?: string;
+  faqs: { question: string; answer: string }[];
+}
+const { heading = 'Common questions', faqs } = Astro.props;
+---
+
+{
+  faqs.length > 0 && (
+    <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+      <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">{heading}</h2>
+      <div class="mt-6 divide-y divide-gold-200 border-y border-gold-200">
+        {faqs.map((faq) => (
+          <details class="group py-1">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+              {faq.question}
+              <span
+                aria-hidden="true"
+                class="shrink-0 text-xl text-gold-600 transition-transform group-open:rotate-45"
+              >
+                +
+              </span>
+            </summary>
+            <div class="prose-ml pb-5 text-ink/90">
+              {faq.answer
+                .split(/\n\s*\n/)
+                .filter(Boolean)
+                .map((p) => (
+                  <p>{p}</p>
+                ))}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}

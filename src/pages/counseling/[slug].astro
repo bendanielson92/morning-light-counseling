@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import FaqList from '../../components/FaqList.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | Morning Light Counseling`} description={entry.data.metaDescription}>
+  <PageHero title={entry.data.title} />
+
+  <article class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <div class="prose-ml text-lg">
+      <Content />
+    </div>
+  </article>
+
+  <div class="border-t border-gold-200 bg-gold-50">
+    <FaqList faqs={entry.data.faqs} />
+  </div>
+
+  <CtaBand
+    heading="This doesn't fix itself. But it does fix."
+    body="A short form, a reply within two business days, and a phone call before any commitment. That's all starting takes."
+  />
+</Layout>

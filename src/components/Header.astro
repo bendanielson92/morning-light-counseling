@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import settings from '../content/singletons/settings.json';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+const hasBlog = posts.length > 0;
+
+const navLinks = [
+  { href: '/mens-counseling', label: "Men's Counseling" },
+  { href: '/counseling', label: 'How I Help' },
+  { href: '/about', label: 'About' },
+  { href: '/what-to-expect', label: 'What to Expect' },
+  ...(hasBlog ? [{ href: '/blog', label: 'Blog' }] : []),
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href + '/'));
+---
+
+<header class="border-b border-gold-200 bg-cream">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="/" class="flex shrink-0 items-center gap-3">
+      <img src="/images/brand/logo.png" alt="" width="56" height="56" class="h-14 w-14 mix-blend-multiply" />
+      <span class="font-display text-lg font-bold leading-tight text-ink sm:text-xl">
+        Morning Light<br />
+        <span class="text-sm font-medium tracking-widest text-gold-700 uppercase sm:text-base">Counseling</span>
+      </span>
+    </a>
+
+    <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-md px-3 py-2 font-medium hover:text-gold-700',
+              isActive(link.href) ? 'text-gold-700 underline underline-offset-8 decoration-2' : 'text-ink',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a
+        href={settings.carepatronUrl}
+        target="_blank"
+        rel="noopener"
+        class="rounded-md px-3 py-2 font-medium text-forest-700 hover:text-forest-800 hover:underline underline-offset-4"
+      >
+        Client Portal<span class="sr-only"> (for current clients — opens in a new tab)</span>
+        <span aria-hidden="true" class="text-sm">↗</span>
+      </a>
+      <a href="/contact" class="btn-gold">Request an Appointment</a>
+    </div>
+
+    <button
+      type="button"
+      id="menu-button"
+      class="rounded-md border border-forest-300 p-2 text-forest-800 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Open menu</span>
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" hidden class="border-t border-gold-200 px-4 pb-6 pt-2 lg:hidden">
+    <nav aria-label="Main mobile" class="flex flex-col">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-md px-2 py-3 text-lg font-medium',
+              isActive(link.href) ? 'text-gold-700' : 'text-ink',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={settings.carepatronUrl}
+        target="_blank"
+        rel="noopener"
+        class="rounded-md px-2 py-3 text-lg font-medium text-forest-700"
+      >
+        Client Portal <span class="text-sm" aria-hidden="true">↗</span>
+        <span class="sr-only">(for current clients — opens in a new tab)</span>
+      </a>
+      <a href="/contact" class="btn-gold mt-3">Request an Appointment</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('menu-button');
+  const menu = document.getElementById('mobile-menu');
+  button?.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    if (menu) menu.hidden = open;
+  });
+</script>

@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans 3 Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Brand gold — #C4882B at 500. Gold-700+ passes AA as text on cream/white. */
+  --color-gold-50: #fcf8ef;
+  --color-gold-100: #f7edd8;
+  --color-gold-200: #efdcb2;
+  --color-gold-300: #e5c483;
+  --color-gold-400: #d8a855;
+  --color-gold-500: #c4882b;
+  --color-gold-600: #a56f1e;
+  --color-gold-700: #855818;
+  --color-gold-800: #664312;
+  --color-gold-900: #4e340f;
+
+  /* Brand forest green — #3D5A3A at 600. */
+  --color-forest-50: #f1f5f0;
+  --color-forest-100: #dfe8dd;
+  --color-forest-200: #c2d2bf;
+  --color-forest-300: #9fb69b;
+  --color-forest-400: #75926f;
+  --color-forest-500: #52704e;
+  --color-forest-600: #3d5a3a;
+  --color-forest-700: #324a30;
+  --color-forest-800: #273a26;
+  --color-forest-900: #1d2c1c;
+
+  --color-cream: #faf7f2;
+  --color-ink: #262119;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-cream font-sans text-ink antialiased;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Consistent, visible focus for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--color-gold-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: var(--color-gold-200);
+}
+
+@layer components {
+  .btn-gold,
+  .btn-forest,
+  .btn-outline,
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 font-sans font-semibold text-base leading-none transition-colors;
+  }
+  .btn-gold {
+    @apply bg-gold-500 text-ink hover:bg-gold-400 active:bg-gold-600;
+  }
+  .btn-forest {
+    @apply bg-forest-600 text-cream hover:bg-forest-500 active:bg-forest-700;
+  }
+  .btn-outline {
+    @apply border-2 border-forest-600 text-forest-700 hover:bg-forest-50;
+  }
+  .btn-outline-light {
+    @apply border-2 border-cream/70 text-cream hover:bg-cream/10;
+  }
+}
+
+/* Long-form content styling (rendered markdoc / prose) */
+.prose-ml {
+  @apply max-w-prose;
+}
+.prose-ml > * + * {
+  margin-top: 1.1em;
+}
+.prose-ml h2 {
+  @apply font-display text-2xl sm:text-3xl text-forest-800 mt-10;
+}
+.prose-ml h3 {
+  @apply font-display text-xl sm:text-2xl text-forest-800 mt-8;
+}
+.prose-ml a {
+  @apply text-gold-700 underline underline-offset-2 hover:text-gold-800;
+}
+.prose-ml blockquote {
+  @apply border-l-4 border-gold-400 pl-4 italic text-forest-800;
+}
+.prose-ml ul {
+  @apply list-disc pl-6;
+}
+.prose-ml ol {
+  @apply list-decimal pl-6;
+}
+.prose-ml li + li {
+  margin-top: 0.35em;
+}
+.prose-ml strong {
+  @apply text-ink;
+}

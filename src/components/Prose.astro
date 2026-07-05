@@ -1,0 +1,16 @@
+---
+// Renders a multiline plain-text field from the CMS as paragraphs.
+interface Props {
+  text: string;
+  class?: string;
+}
+const { text, class: className } = Astro.props;
+const paragraphs = text
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
+---
+
+<div class:list={['prose-ml', className]}>
+  {paragraphs.map((p) => <p>{p}</p>)}
+</div>

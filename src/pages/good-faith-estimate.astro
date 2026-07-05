@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import settings from '../content/singletons/settings.json';
+---
+
+<Layout
+  title="Good Faith Estimate | Morning Light Counseling"
+  description="Your right to a Good Faith Estimate of counseling costs under the federal No Surprises Act."
+>
+  <PageHero title="Your Right to a Good Faith Estimate" />
+
+  <article class="prose-ml mx-auto max-w-3xl px-4 pb-16 text-lg sm:px-6">
+    <p>
+      Under the federal <strong>No Surprises Act</strong> (effective January 1, 2022), health care providers are
+      required to give clients who don't have insurance — or who choose not to use it — an estimate of the expected
+      cost of care, in writing, before services begin.
+    </p>
+
+    <h2>What that means here</h2>
+    <ul>
+      <li>
+        Counseling sessions at Morning Light Counseling are <strong>{settings.selfPayRate}</strong> for self-pay
+        clients. There are no hidden fees, and you'll never be billed for something we haven't discussed.
+      </li>
+      <li>
+        If you are uninsured or choose to pay out of pocket, you will receive a written Good Faith Estimate of
+        expected charges before your first session, and any time you request one.
+      </li>
+      <li>
+        You can ask for a Good Faith Estimate before you schedule anything — just ask when you reach out.
+      </li>
+    </ul>
+
+    <h2>Your protections</h2>
+    <p>
+      If you receive a bill that is at least <strong>$400 more</strong> than your Good Faith Estimate, you have the
+      right to dispute it. Make sure to save a copy or a picture of your estimate.
+    </p>
+    <p>
+      For questions or more information about your right to a Good Faith Estimate, visit
+      <a href="https://www.cms.gov/nosurprises" target="_blank" rel="noopener">www.cms.gov/nosurprises<span class="sr-only"> (opens in a new tab)</span></a>
+      or call 1-800-985-3059.
+    </p>
+
+    <h2>Questions about cost</h2>
+    <p>
+      Money questions are welcome here — they're a normal part of deciding whether counseling fits your life right
+      now. Call {settings.phone} or email {settings.email} and ask anything.
+    </p>
+  </article>
+</Layout>
