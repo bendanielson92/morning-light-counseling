@@ -10,10 +10,19 @@
 - [ ] **Review all copy** — every page was rewritten in a new voice. Billy should read: Homepage, Men's Counseling, all six counseling pages, About, What to Expect, and the FAQs. Everything is editable in the control panel if he wants different wording.
 - [ ] **Approve the Good Faith Estimate page** — it states the $125 rate and the standard No Surprises Act language. His billing/EHR provider may also have GFE templates for the written estimates he hands to actual clients.
 
+## Review loop with Billy (before cutover)
+
+While you tweak the site, Billy reviews it on the Vercel preview address. (The real web address still shows his old WordPress site until the DNS cutover — the last step below.)
+
+- [ ] **Copy changes** — Billy edits wording himself in the control panel (`/keystatic`), or texts them to Ben.
+- [ ] **Visual changes** — Billy leaves pinned notes via Pastel (see `docs/FEEDBACK-PASTEL.md`); Ben works through the list.
+- [ ] Iterate until you both love it, *then* run the cutover below.
+
 ## Technical setup (Ben)
 
-- [ ] Create GitHub repo + push (see README)
-- [ ] Vercel project + env vars (Resend + Keystatic)
+- [x] Create GitHub repo + push — done (`bendanielson92/morning-light-counseling`)
+- [x] Connect Vercel project — done (auto-deploys on every push)
+- [ ] Set env vars in Vercel (Resend + Keystatic) — see README steps 3–4
 - [ ] Verify domain in Resend; switch CONTACT_FROM_EMAIL off onboarding@resend.dev
 - [ ] Send a real test through the contact form; confirm it lands in Billy's inbox and reply-to works
 - [ ] Keystatic GitHub mode: log in as Billy, make a test edit, confirm auto-deploy

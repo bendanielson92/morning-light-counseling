@@ -27,6 +27,7 @@ In local dev the control panel edits files directly on disk (no login needed).
 | `src/pages/` | Routes; `api/contact.ts` is the form endpoint |
 | `src/styles/global.css` | Design tokens (brand gold/forest/cream, fonts, buttons) |
 | `docs/BILLY-GUIDE.md` | One-page editing guide for Billy |
+| `docs/FEEDBACK-PASTEL.md` | How Billy requests visual tweaks (Pastel review loop) |
 | `docs/LAUNCH-CHECKLIST.md` | Everything left before DNS cutover |
 
 ## Deploying (one-time setup)
@@ -38,7 +39,7 @@ In local dev the control panel edits files directly on disk (no login needed).
    - `CONTACT_FROM_EMAIL` — e.g. `inquiries@morninglightcounselingservices.com` (must be on the verified domain)
    - `CONTACT_TO_EMAIL` — `billy@morninglightcounselingservices.com`
    - Until the domain is verified you can test with `CONTACT_FROM_EMAIL=onboarding@resend.dev` (delivers only to your own Resend account email).
-4. **Control panel (GitHub mode)**: set `PUBLIC_KEYSTATIC_GITHUB_REPO=owner/repo-name` in Vercel env vars and redeploy. Then visit `https://<site>/keystatic` — Keystatic will walk you through creating its GitHub App (one guided click-through) and will give you the three remaining env vars to paste into Vercel: `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`. Redeploy once more.
+4. **Control panel (GitHub mode)**: set `PUBLIC_KEYSTATIC_GITHUB_REPO=bendanielson92/morning-light-counseling` in Vercel env vars and redeploy. Then visit `https://<site>/keystatic` — Keystatic will walk you through creating its GitHub App (one guided click-through) and will give you the three remaining env vars to paste into Vercel: `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`. Redeploy once more.
 5. **Billy's access**: create Billy a free GitHub account, add him as a collaborator on the repo, and install the Keystatic GitHub App for him. After that he just bookmarks `his-site.com/keystatic` and logs in with GitHub.
 6. **DNS cutover**: in Vercel add the domain `morninglightcounselingservices.com`, then point the domain's DNS (A/CNAME per Vercel's instructions) away from WordPress. The old WordPress slugs (`/mens-counseling`, `/about`, `/what-to-expect`) are preserved; `/contact-us` 301-redirects to `/contact`.
 
