@@ -114,16 +114,19 @@ export default config({
       schema: {
         pageTitle: fields.text({ label: 'Page title' }),
         heroTagline: fields.text({ label: 'Hero tagline', multiline: true }),
-        sections: fields.array(
+        intro: fields.text({ label: 'Intro paragraphs', multiline: true }),
+        costHeading: fields.text({ label: '"Cost" section heading' }),
+        costs: fields.array(
           fields.object({
-            heading: fields.text({ label: 'Section heading' }),
-            body: fields.text({ label: 'Section paragraphs', multiline: true }),
+            title: fields.text({ label: 'Title' }),
+            body: fields.text({ label: 'Paragraphs', multiline: true }),
           }),
           {
-            label: 'Page sections',
-            itemLabel: (props) => props.fields.heading.value || 'Section',
+            label: 'Costs of isolation',
+            itemLabel: (props) => props.fields.title.value || 'Cost',
           }
         ),
+        closing: fields.text({ label: 'Closing statement', multiline: true }),
         faqs: faqArray,
       },
     }),

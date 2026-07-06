@@ -1,41 +1,41 @@
 {
   "pageTitle": "What to Expect",
-  "intro": "No man likes walking into something blind. Here's exactly how getting started works — three steps, no pressure, no surprises.",
+  "intro": "Counseling can be powerful for navigating and overcoming life's obstacles, but it's important to understand that it is a process that takes time. While some people may experience relief after just a few sessions, meaningful and lasting change is often a slow and gradual journey.\n\nBefore the process of counseling begins, here are some practical steps on how to reach out and get started with Morning Light Counseling.",
   "steps": [
     {
-      "title": "Reach out",
-      "description": "Fill out the short inquiry form on the contact page (or call). It takes about two minutes — just enough for me to know who you are and how to reach you. I respond within two business days."
+      "title": "Scheduling request",
+      "description": "Complete the initial scheduling request inquiry by filling out the form on the contact page. Someone will respond within 2 business days."
     },
     {
-      "title": "Complete intake paperwork",
-      "description": "I'll send you a link to a secure client portal where you'll fill out intake paperwork and pick a time for your first session. Everything is online and confidential."
+      "title": "Intake paperwork",
+      "description": "You will be given a link to the client portal where you will complete initial intake paperwork and be able to schedule appointments."
     },
     {
       "title": "A brief phone call",
-      "description": "Before your first appointment, we'll talk briefly by phone. You can ask anything, I'll answer honestly, and we'll make sure this is the right fit before you invest a full session."
+      "description": "Time will be set for a brief phone call to discuss any questions you might have prior to the first session."
     }
   ],
-  "closing": "After that, we get to work. Change takes time — counseling is gradual, deliberate work, not a quick fix — but you won't be doing it alone, and you'll know where we're headed. The aim isn't just to feel better for a week. It's to understand your story within God's redemptive plan and build something that holds.",
+  "closing": "We live in a fallen world, and we experience its brokenness every day. This brokenness impacts our lives deeply; we feel it both within ourselves as well as in the circumstances coming towards us.\n\nCounseling provides a way to make sense of these experiences. Through telling our story, we can begin to understand our journey. Vitally, your personal story isn't isolated; it's intricately woven into the greater story of God's redemptive plan for fallen humanity.",
   "faqs": [
     {
-      "question": "Do you take my insurance?",
-      "answer": "I accept most major plans, including Highmark, Blue Cross/Blue Shield, Capital Blue Cross, Geisinger, UnitedHealthcare/UBH, Optum, Aetna, and Quest EAP. I'm not able to accept Medicare or Medicaid. If you don't see your plan listed, reach out — we'll figure out what your options are."
+      "question": "What insurances do you accept?",
+      "answer": "Highmark, Blue Cross/Blue Shield, Capital Blue Cross, Geisinger, United Health Care (UHC | UBH), Optum, Aetna, and Quest and Quest Behavioral Health EAP.\n\nOut of network providers: I'll gladly submit claims to your participating insurance provider on your behalf. Please remember that co-pays, deductibles, and any amounts not covered by your insurance remain your responsibility.\n\nBecause of federal regulations governing Medicare and Medicaid, I am unable to accept clients with these insurances, even for self-paid services. I am not in-network with these programs."
     },
     {
-      "question": "What does it cost without insurance?",
-      "answer": "Self-pay sessions are $125. If you're uninsured or choose not to use insurance, you're entitled to a Good Faith Estimate of costs before we begin — see the Good Faith Estimate page for details."
+      "question": "What is your self-pay rate?",
+      "answer": "Self-pay rate is $125 per session. If you're paying without insurance, you're entitled to a Good Faith Estimate of costs before we begin — see the Good Faith Estimate page for details."
+    },
+    {
+      "question": "What ages do you see in office?",
+      "answer": "Generally, I see ages 12 and older. Please reach out if you have any specific questions related to this. On occasion I will see younger ages depending on maturity level and willingness to engage in the counseling process."
     },
     {
       "question": "Can we meet online?",
-      "answer": "Yes. I see men in person at my Manheim office and by secure video anywhere in Pennsylvania. Plenty of men do their sessions from a parked truck on a lunch break — whatever works."
+      "answer": "Yes. I see men in person at my Manheim office and by secure video anywhere in Pennsylvania."
     },
     {
       "question": "Is what I say confidential?",
       "answer": "Yes. What you share in counseling is protected by law and professional ethics. The narrow exceptions — like an imminent risk of serious harm to yourself or someone else, or suspected abuse of a child — are ones I'll walk you through plainly before we start."
-    },
-    {
-      "question": "How long will counseling take?",
-      "answer": "It depends on what we're working on. Some men come for a season — a few months around a specific struggle. Others stay longer because the work keeps paying off. We'll check the compass regularly, and you're never locked in."
     }
   ]
 }
