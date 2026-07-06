@@ -68,6 +68,12 @@ const insuranceShort = settings.insurances.slice(0, 4).join(', ');
     />
   </section>
 
+  <!-- What counseling is -->
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20">
+    <h2 class="font-display text-3xl text-forest-800 sm:text-4xl">{home.counselingHeading}</h2>
+    <Prose text={home.counselingBody} class="mt-6" />
+  </section>
+
   <!-- Services -->
   <section class="bg-gold-50">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
@@ -101,12 +107,6 @@ const insuranceShort = settings.insurances.slice(0, 4).join(', ');
       <Prose text={home.isolationBody} class="mx-auto mt-6 text-left text-forest-100 sm:text-center" />
       <a href="/mens-counseling" class="btn-gold mt-8">{home.isolationCtaLabel}</a>
     </div>
-  </section>
-
-  <!-- What counseling is -->
-  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20">
-    <h2 class="font-display text-3xl text-forest-800 sm:text-4xl">{home.counselingHeading}</h2>
-    <Prose text={home.counselingBody} class="mt-6" />
   </section>
 
   <!-- Insurance & rates -->

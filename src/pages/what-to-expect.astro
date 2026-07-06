@@ -12,7 +12,11 @@ import settings from '../content/singletons/settings.json';
   title="What to Expect | Morning Light Counseling — Manheim, PA"
   description="How counseling at Morning Light starts: a short inquiry, secure intake paperwork, and a phone call before your first session. Rates, insurance, and telehealth details."
 >
-  <PageHero title={page.pageTitle} tagline={page.intro} />
+  <PageHero title={page.pageTitle} tagline="Change takes time." />
+
+  <section class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <Prose text={page.intro} class="text-lg" />
+  </section>
 
   <section class="mx-auto max-w-4xl px-4 pb-4 sm:px-6" aria-label="Steps to get started">
     <ol class="grid gap-6 md:grid-cols-3">
@@ -34,8 +38,8 @@ import settings from '../content/singletons/settings.json';
   </section>
 
   <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-    <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">Then the real work begins</h2>
-    <Prose text={page.closing} class="mt-5 text-lg" />
+    <div aria-hidden="true" class="h-1 w-16 rounded bg-gold-500"></div>
+    <Prose text={page.closing} class="mt-6 text-lg" />
   </section>
 
   <section class="border-y border-gold-200 bg-gold-100/60">

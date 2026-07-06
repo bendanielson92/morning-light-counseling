@@ -1,40 +1,35 @@
 {
-  "pageTitle": "Counseling for Men",
-  "heroTagline": "Men aren't good at asking for help. Most were never taught how — only that they shouldn't need it.",
-  "sections": [
+  "pageTitle": "Men's Counseling",
+  "heroTagline": "Men's Mental Health Counseling is Necessary",
+  "intro": "Many men feel isolated in their mental health struggles.\n\nThey believe that they are alone in their experience of pain. They believe that brokenness, suffering, distress, and shame are unique familiarities only they can understand. So they don't let others in, and the trenches of life get lonely.\n\nIsolation though, can be a double-edged sword. In some ways it's protective, isn't it? You can choose to hide from the pressures, ignore or minimize the pain… swallow the guilt.\n\nBut, have you ever stopped and asked, \"What's the cost of remaining in isolation and choosing to not seek help?\"",
+  "costHeading": "What is the Cost?",
+  "costs": [
     {
-      "heading": "The island looks like safety",
-      "body": "Somewhere along the way, most men learn to handle pain the same way: alone. Swallow it, outwork it, joke around it, pour something over it. Isolation feels protective — nobody sees you struggle, nobody gets to judge, nothing gets vulnerable.\n\nBut the island that looks like safety works like a trap. The things you never say don't dissolve. They compound — quietly, with interest."
+      "title": "Ongoing Cycles of Pain",
+      "body": "Negative thinking and patterns of conduct will persist unless steps are taken to explore what lies beneath the \"hood of the heart.\" When these patterns remain unaddressed, they can lead to conflict, misunderstandings, and emotional pain in significant relationships. Moreover, these cycles often create a ripple effect that can span generations."
     },
     {
-      "heading": "What the silence costs",
-      "body": "Left alone, the same patterns keep cycling: the anger that flares over small things, the numbness you call being tired, the habits that promise relief and deliver shame. The cost lands on the people closest to you — a wife who has stopped asking what's wrong, kids who study your moods like a weather report.\n\nAnd there's a quieter cost underneath it: distance from God. Not a dramatic loss of faith — just a slow drift from the source of the strength you keep trying to generate on your own. Unaddressed, these patterns don't stay contained to one man. They get handed down."
+      "title": "Missed Opportunities for Growth",
+      "body": "Counseling provides a safe space to explore feelings, confront underlying issues, and to reflect on previously held \"blind spots\". Sometimes it is necessary to engage in a fundamental shift in our relationship with God, our understanding of ourselves, and our approach to life's challenges."
     },
     {
-      "heading": "You were built for connection",
-      "body": "Scripture is blunt about this: it is not good for man to be alone. That was never just about marriage — it's about how men are made. Iron sharpens iron. Burdens are meant to be carried by more than one set of shoulders.\n\nCounseling isn't a substitute for that kind of life. It's how a lot of men find their way back to it."
-    },
-    {
-      "heading": "More than putting out fires",
-      "body": "Some men come in because something is on fire — a marriage, a job, a habit that finally cost too much. That's a good reason to come. But this work isn't only for crisis.\n\nPlenty of men come to grow: to lead their families with steadiness instead of reactivity, to repair what their temper or absence damaged, to figure out who they are now that a season has ended, or to finally deal with something they've dragged behind them for twenty years. Whatever brought you here, the work is the same — honest, purposeful, and aimed at lasting change."
-    },
-    {
-      "heading": "What I'm here for",
-      "body": "I'm not here to lecture you, fix you, or hand you a worksheet. I'm a licensed counselor who works exclusively with men, and my job is to walk alongside you — asking the questions no one else asks, telling you the truth when it would be easier not to, and helping you see your story in light of God's redemptive one.\n\nYou've carried it this far. You don't have to carry it further alone."
+      "title": "Remaining on the Island",
+      "body": "You weren't created to live in isolation. Rather, you were created for community, to be in relationships and engage in honest confessional patterns with others. The cost of isolation puts you at odds with the ability to foster healthy connections not only with others, but also with your creator.\n\nGod has purposely placed us in community, for it is through these relationships that we can lean on one another and experience His grace. By sharing our experiences of both pain and joy we can shoulder each other's burdens while encouraging each other onward as we learn to both accept help and serve others."
     }
   ],
+  "closing": "Morning Light Counseling seeks to serve the whole man by attending to the issues produced in his own heart, by walking alongside him in his experience of living in a fallen world, and by helping him consider how God speaks to him in these moments.",
   "faqs": [
     {
-      "question": "I've never talked to a counselor. What if it's not for me?",
-      "answer": "Fair question — plenty of men who sit in my office said the same thing. There's no performance required. We start with what's actually going on, at your pace. Most men find that talking to a counselor is less like being analyzed and more like finally thinking out loud with someone who knows how to help."
+      "question": "I don't consider myself to be a Christian. Can I still receive counseling at Morning Light?",
+      "answer": "Yes, you are unequivocally welcome here. You should know, my counseling worldview is filtered through a Biblical lens. Therefore, treatment methodologies offered will not contradict Scripture. With this in mind, in-session prayer, beliefs, and Scripture references will not be imposed on counselees without their consent."
     },
     {
-      "question": "Do I have to be a Christian to come?",
-      "answer": "No. My counseling is grounded in a Biblical framework, and faith is woven into my work — but you set the depth. Men at every point of belief and doubt are welcome here."
+      "question": "What ages do you see in office?",
+      "answer": "Generally, I see ages 12 and older. Please reach out if you have any specific questions related to this. On occasion I will see younger ages depending on maturity level and willingness to engage in the counseling process."
     },
     {
-      "question": "Do you only work with men?",
-      "answer": "Yes — men and boys ages 12 and up. Focusing the practice this way lets me do this one thing well. If you're looking for counseling for a woman in your life, I'm glad to point you to trusted counselors in the area."
+      "question": "I'm a woman in need of support. What services can be offered?",
+      "answer": "The mission and primary focus of Morning Light Counseling is to provide counseling to men in Central PA. If you are a woman and in need of support, please reach out and I can link you with my referral network!"
     }
   ]
 }

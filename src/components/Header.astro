@@ -7,11 +7,9 @@ const hasBlog = posts.length > 0;
 
 const navLinks = [
   { href: '/mens-counseling', label: "Men's Counseling" },
-  { href: '/counseling', label: 'How I Help' },
   { href: '/about', label: 'About' },
   { href: '/what-to-expect', label: 'What to Expect' },
   ...(hasBlog ? [{ href: '/blog', label: 'Blog' }] : []),
-  { href: '/contact', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -53,7 +51,7 @@ const isActive = (href: string) =>
         rel="noopener"
         class="rounded-md px-3 py-2 font-medium text-forest-700 hover:text-forest-800 hover:underline underline-offset-4"
       >
-        Client Portal<span class="sr-only"> (for current clients — opens in a new tab)</span>
+        Active Clients<span class="sr-only"> (opens the scheduling portal in a new tab)</span>
         <span aria-hidden="true" class="text-sm">↗</span>
       </a>
       <a href="/contact" class="btn-gold">Request an Appointment</a>
@@ -95,8 +93,8 @@ const isActive = (href: string) =>
         rel="noopener"
         class="rounded-md px-2 py-3 text-lg font-medium text-forest-700"
       >
-        Client Portal <span class="text-sm" aria-hidden="true">↗</span>
-        <span class="sr-only">(for current clients — opens in a new tab)</span>
+        Active Clients <span class="text-sm" aria-hidden="true">↗</span>
+        <span class="sr-only">(opens the scheduling portal in a new tab)</span>
       </a>
       <a href="/contact" class="btn-gold mt-3">Request an Appointment</a>
     </nav>

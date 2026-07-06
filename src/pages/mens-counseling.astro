@@ -9,24 +9,37 @@ import page from '../content/singletons/mens-counseling.json';
 
 <Layout
   title="Men's Counseling | Morning Light Counseling — Manheim, PA"
-  description="Counseling built exclusively for men. The cost of carrying it alone is real — the way back starts with one honest conversation. Manheim, PA & online."
+  description="Many men feel isolated in their mental health struggles. What is the cost of remaining in isolation? Christian counseling for men in Manheim, PA and online."
 >
   <PageHero title={page.pageTitle} tagline={page.heroTagline} />
 
-  {
-    page.sections.map((section, i) => (
-      <section class:list={[i % 2 === 1 ? 'bg-gold-50 border-y border-gold-200' : '']}>
-        <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-14">
-          <h2 class="font-display text-2xl text-forest-800 sm:text-3xl">{section.heading}</h2>
-          <Prose text={section.body} class="mt-5" />
-        </div>
-      </section>
-    ))
-  }
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-16">
+    <Prose text={page.intro} class="text-lg" />
+  </section>
+
+  <section class="border-y border-gold-200 bg-gold-50">
+    <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-16">
+      <h2 class="font-display text-3xl font-semibold text-forest-800 sm:text-4xl">{page.costHeading}</h2>
+      <div aria-hidden="true" class="mt-4 h-1 w-16 rounded bg-gold-500"></div>
+      <div class="mt-10 space-y-10">
+        {
+          page.costs.map((cost) => (
+            <div class="border-l-4 border-gold-500 pl-5 sm:pl-7">
+              <h3 class="font-display text-xl font-semibold text-forest-800 sm:text-2xl">{cost.title}</h3>
+              <Prose text={cost.body} class="mt-3 text-ink/90" />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-forest-800 text-cream">
+    <div class="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 md:py-16">
+      <p class="font-display text-2xl italic leading-relaxed sm:text-3xl">{page.closing}</p>
+    </div>
+  </section>
 
   <FaqList faqs={page.faqs} />
-  <CtaBand
-    heading="One honest conversation. That's the first step."
-    body="Fill out a short form, get a reply within two business days, and talk it through by phone before committing to anything."
-  />
+  <CtaBand />
 </Layout>

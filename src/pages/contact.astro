@@ -29,8 +29,8 @@ const referralSources = [
   description="Request an appointment with Morning Light Counseling. A short form, a reply within two business days, and a phone call before your first session."
 >
   <PageHero
-    title="Reach Out"
-    tagline="Two minutes, a handful of questions, and I'll get back to you within two business days. Prefer to talk? Call anytime."
+    title="Contact Us"
+    tagline="Complete the form below and someone will respond within 2 business days. Prefer to talk? Call anytime."
   />
 
   <div class="mx-auto grid max-w-6xl gap-12 px-4 pb-16 sm:px-6 lg:grid-cols-[3fr_2fr]">
@@ -91,7 +91,7 @@ const referralSources = [
               <input type="radio" name="payment" value="Insurance" required class="accent-forest-600" /> Insurance
             </label>
             <label class="flex items-center gap-2">
-              <input type="radio" name="payment" value="EAP" class="accent-forest-600" /> EAP
+              <input type="radio" name="payment" value="EAP" class="accent-forest-600" /> Employee assistance program (EAP)
             </label>
             <label class="flex items-center gap-2">
               <input type="radio" name="payment" value="Self-pay" class="accent-forest-600" /> Self-pay
@@ -100,7 +100,7 @@ const referralSources = [
         </fieldset>
 
         <div>
-          <label for="reason" class="mb-1 block font-semibold">What brings you in? <span aria-hidden="true" class="text-gold-700">*</span></label>
+          <label for="reason" class="mb-1 block font-semibold">Reason for visit <span aria-hidden="true" class="text-gold-700">*</span></label>
           <select id="reason" name="reason" required class="w-full rounded-md border border-forest-300 bg-cream px-3 py-2.5">
             <option value="" selected disabled>Choose the closest fit…</option>
             {reasons.map((r) => <option value={r}>{r}</option>)}
@@ -112,7 +112,7 @@ const referralSources = [
         </div>
 
         <div>
-          <label for="referral" class="mb-1 block font-semibold">How did you hear about Morning Light?</label>
+          <label for="referral" class="mb-1 block font-semibold">How did you hear about Morning Light Counseling?</label>
           <select id="referral" name="referral" class="w-full rounded-md border border-forest-300 bg-cream px-3 py-2.5">
             <option value="" selected disabled>Choose one…</option>
             {referralSources.map((r) => <option value={r}>{r}</option>)}
