@@ -93,8 +93,8 @@ export default config({
         intro: fields.text({ label: 'Intro line', multiline: true }),
         headshot: fields.image({
           label: 'Headshot',
-          directory: 'public/images/uploads',
-          publicPath: '/images/uploads/',
+          directory: 'public/images/brand',
+          publicPath: '/images/brand/',
         }),
         bio: fields.text({ label: 'Bio paragraphs', multiline: true }),
         approachHeading: fields.text({ label: 'Approach heading' }),
