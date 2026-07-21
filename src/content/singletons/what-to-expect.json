@@ -19,7 +19,7 @@
   "faqs": [
     {
       "question": "What insurances do you accept?",
-      "answer": "Highmark, Blue Cross/Blue Shield, Capital Blue Cross, Geisinger, United Health Care (UHC | UBH), Optum, Aetna, and Quest and Quest Behavioral Health EAP.\n\nOut of network providers: I'll gladly submit claims to your participating insurance provider on your behalf. Please remember that co-pays, deductibles, and any amounts not covered by your insurance remain your responsibility.\n\nBecause of federal regulations governing Medicare and Medicaid, I am unable to accept clients with these insurances, even for self-paid services. I am not in-network with these programs."
+      "answer": "Highmark, Blue Cross/Blue Shield, Capital Blue Cross, Geisinger, United Health Care (UHC | UBH), Optum, Aetna, and Quest and Quest Behavioral Health EAP.\n\nOut of network providers: We'll gladly provide you with a superbill to submit to your  insurance provider. Please remember that co-pays, deductibles, and any amounts not covered by your insurance remain your responsibility.\n\nBecause of federal regulations governing Medicare and Medicaid, we are unable to accept clients with these insurances, even for self-paid services. we are not in-network with these programs."
     },
     {
       "question": "What is your self-pay rate?",
@@ -27,11 +27,11 @@
     },
     {
       "question": "What ages do you see in office?",
-      "answer": "Generally, I see ages 12 and older. Please reach out if you have any specific questions related to this. On occasion I will see younger ages depending on maturity level and willingness to engage in the counseling process."
+      "answer": "Generally, we see ages 12 and older. Please reach out if you have any specific questions related to this. On occasion we will see younger ages depending on maturity level and willingness to engage in the counseling process."
     },
     {
       "question": "Can we meet online?",
-      "answer": "Yes. I see men in person at my Manheim office and by secure video anywhere in Pennsylvania using an embedded, HIPPA compliant platform. If meeting online, please ensure that you have both a proper connection and a private meeting space."
+      "answer": "Yes. We see men in person at our Manheim office and by secure video anywhere in Pennsylvania using an embedded, HIPPA compliant platform. If meeting online, please ensure that you have both a proper connection and a private meeting space."
     },
     {
       "question": "Is what I say confidential?",
