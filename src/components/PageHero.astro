@@ -6,9 +6,15 @@ interface Props {
 const { title, tagline } = Astro.props;
 ---
 
-<section class="bg-gradient-to-b from-gold-100 to-cream">
-  <div class="mx-auto max-w-4xl px-4 pb-10 pt-14 sm:px-6 sm:pb-14 sm:pt-20">
-    <h1 class="font-display text-4xl font-bold text-ink sm:text-5xl">{title}</h1>
-    {tagline && <p class="mt-5 max-w-2xl text-xl text-forest-800">{tagline}</p>}
+<section
+  class="relative overflow-hidden bg-cover bg-center"
+  style="background-image: url('/images/brand/sunrise-hero.webp');"
+  role="img"
+  aria-label="Picture of a sunrise indicating hope on the horizon"
+>
+  <div aria-hidden="true" class="absolute inset-0 bg-ink/50"></div>
+  <div class="relative mx-auto max-w-4xl px-4 pb-10 pt-14 sm:px-6 sm:pb-14 sm:pt-20">
+    <h1 class="font-display text-4xl font-bold text-cream sm:text-5xl">{title}</h1>
+    {tagline && <p class="mt-5 max-w-2xl text-xl text-gold-100">{tagline}</p>}
   </div>
 </section>

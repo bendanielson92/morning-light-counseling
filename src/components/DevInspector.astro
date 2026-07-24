@@ -1,0 +1,130 @@
+---
+// Dev-only element picker: toggle it on, click any element, and a
+// descriptor (page, selector, classes, text) is copied to the clipboard
+// to paste into Claude Code. Never rendered in production builds.
+---
+
+<button
+  id="dev-inspector-toggle"
+  type="button"
+  title="Pick an element to reference (Esc to exit)"
+  style="position:fixed;bottom:16px;right:16px;z-index:99999;width:44px;height:44px;border-radius:9999px;border:1px solid #999;background:#1c2b21;color:#f5efdf;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3);"
+>
+  ⌖
+</button>
+
+<div
+  id="dev-inspector-highlight"
+  style="position:fixed;z-index:99997;pointer-events:none;display:none;background:rgba(212,164,62,.25);outline:2px solid #d4a43e;border-radius:2px;"
+>
+</div>
+
+<div
+  id="dev-inspector-toast"
+  style="position:fixed;bottom:72px;right:16px;z-index:99999;display:none;max-width:320px;background:#1c2b21;color:#f5efdf;padding:10px 14px;border-radius:8px;font:13px/1.4 sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3);"
+>
+</div>
+
+<script>
+  const toggle = document.getElementById('dev-inspector-toggle')!;
+  const highlight = document.getElementById('dev-inspector-highlight')!;
+  const toast = document.getElementById('dev-inspector-toast')!;
+  let active = false;
+  let toastTimer: number;
+
+  function cssPath(el: Element): string {
+    const parts: string[] = [];
+    let node: Element | null = el;
+    while (node && node.tagName !== 'BODY') {
+      let part = node.tagName.toLowerCase();
+      if (node.id) {
+        parts.unshift(`#${node.id}`);
+        break;
+      }
+      const parent: Element | null = node.parentElement;
+      if (parent) {
+        const siblings = Array.from(parent.children).filter(
+          (c) => c.tagName === node!.tagName
+        );
+        if (siblings.length > 1) {
+          part += `:nth-of-type(${siblings.indexOf(node) + 1})`;
+        }
+      }
+      parts.unshift(part);
+      node = parent;
+    }
+    return parts.join(' > ');
+  }
+
+  function describe(el: Element): string {
+    const text = (el.textContent || '').trim().replace(/\s+/g, ' ');
+    const lines = [
+      `Element on ${location.pathname}`,
+      `Selector: ${cssPath(el)}`,
+    ];
+    if (el.className && typeof el.className === 'string') {
+      lines.push(`Classes: ${el.className}`);
+    }
+    if (text) {
+      lines.push(`Text: "${text.slice(0, 140)}${text.length > 140 ? '…' : ''}"`);
+    }
+    if (el instanceof HTMLImageElement) {
+      lines.push(`Image src: ${el.getAttribute('src')}`);
+    }
+    return lines.join('\n');
+  }
+
+  function showToast(msg: string) {
+    toast.textContent = msg;
+    toast.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => (toast.style.display = 'none'), 2500);
+  }
+
+  function onMove(e: MouseEvent) {
+    const el = e.target as Element;
+    if (!el || el === toggle || toggle.contains(el)) {
+      highlight.style.display = 'none';
+      return;
+    }
+    const r = el.getBoundingClientRect();
+    highlight.style.display = 'block';
+    highlight.style.top = `${r.top}px`;
+    highlight.style.left = `${r.left}px`;
+    highlight.style.width = `${r.width}px`;
+    highlight.style.height = `${r.height}px`;
+  }
+
+  async function onClick(e: MouseEvent) {
+    const el = e.target as Element;
+    if (el === toggle || toggle.contains(el)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const info = describe(el);
+    try {
+      await navigator.clipboard.writeText(info);
+      showToast('Copied! Paste it into Claude Code to point at this element.');
+    } catch {
+      showToast(info);
+    }
+  }
+
+  function onKey(e: KeyboardEvent) {
+    if (e.key === 'Escape') setActive(false);
+  }
+
+  function setActive(on: boolean) {
+    active = on;
+    toggle.style.background = on ? '#d4a43e' : '#1c2b21';
+    toggle.style.color = on ? '#1c2b21' : '#f5efdf';
+    document.body.style.cursor = on ? 'crosshair' : '';
+    highlight.style.display = 'none';
+    const method = on ? 'addEventListener' : 'removeEventListener';
+    document[method]('mousemove', onMove as EventListener, true);
+    document[method]('click', onClick as EventListener, true);
+    document[method]('keydown', onKey as EventListener, true);
+    if (on) showToast('Picker on — click any element. Esc to exit.');
+  }
+
+  toggle.addEventListener('click', () => setActive(!active));
+</script>
