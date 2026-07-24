@@ -1,4 +1,7 @@
 ---
+// Alternate homepage for review: identical to index.astro except the hero,
+// which uses the sun-washed treatment (light overlay, logo direct on the
+// photo). Noindexed; delete once a direction is chosen.
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Prose from '../components/Prose.astro';
@@ -9,13 +12,17 @@ import settings from '../content/singletons/settings.json';
 const services = (await getCollection('services')).sort(
   (a, b) => a.data.order - b.data.order
 );
-const insuranceShort = settings.insurances.slice(0, 4).join(', ');
 ---
 
 <Layout
-  title="Morning Light Counseling | Christian Counseling for Men — Manheim, PA"
-  description="Faith-based, hope-focused counseling for men in Manheim, PA and online across Pennsylvania. Anxiety, depression, anger, habits, and marriage — most major insurance accepted."
+  title="Homepage Option B | Morning Light Counseling"
+  description="Preview of an alternate homepage design."
+  noindex
 >
+  <p class="bg-ink px-4 py-2 text-center text-sm font-semibold tracking-wide text-gold-300">
+    Design preview — Option B (sun-washed hero). The live homepage is at morninglightcounselingservices.com.
+  </p>
+
   <!-- Hero -->
   <section
     class="relative overflow-hidden bg-cover bg-center"
@@ -23,28 +30,26 @@ const insuranceShort = settings.insurances.slice(0, 4).join(', ');
     role="img"
     aria-label="Picture of a sunrise indicating hope on the horizon"
   >
-    <div aria-hidden="true" class="absolute inset-0 bg-ink/40"></div>
+    <div
+      aria-hidden="true"
+      class="absolute inset-0"
+      style="background: linear-gradient(to bottom, rgba(250,247,242,0.88), rgba(250,247,242,0.72));"
+    >
+    </div>
     <div class="relative mx-auto flex max-w-6xl flex-col items-center px-4 pb-16 pt-16 text-center sm:px-6 sm:pb-24 sm:pt-24">
-      <h1 class="relative">
-        <div
-          aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 h-[175%] w-[150%] -translate-x-1/2 -translate-y-1/2"
-          style="background: radial-gradient(closest-side, rgba(250,247,242,0.92), rgba(250,247,242,0.55) 45%, transparent 72%);"
-        >
-        </div>
+      <h1>
         <img
           src="/images/brand/logo-sign.webp"
           alt={home.heroTitle}
           width="800"
           height="652"
-          class="relative h-auto w-56 sm:w-80"
-          style="filter: drop-shadow(0 0 14px rgba(250,247,242,0.9)) drop-shadow(0 0 40px rgba(250,247,242,0.6));"
+          class="h-auto w-56 sm:w-80"
         />
       </h1>
-      <p class="mt-8 max-w-2xl text-xl leading-relaxed text-gold-100">{home.heroSubtitle}</p>
+      <p class="mt-8 max-w-2xl text-xl leading-relaxed text-forest-800">{home.heroSubtitle}</p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="/contact" class="btn-gold text-lg">{home.heroCtaLabel}</a>
-        <a href="/what-to-expect" class="btn-outline-light text-lg">What to Expect</a>
+        <a href="/what-to-expect" class="btn-outline text-lg">What to Expect</a>
       </div>
     </div>
   </section>
