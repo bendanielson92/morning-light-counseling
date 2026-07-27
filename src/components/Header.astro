@@ -76,7 +76,7 @@ const isActive = (href: string) =>
   <div id="mobile-menu" hidden class="border-t border-gold-200 bg-cream px-4 pb-6 pt-2 shadow-lg lg:hidden">
     <nav aria-label="Main mobile" class="flex flex-col">
       {
-        navLinks.map((link) => (
+        [{ href: '/', label: 'Home' }, ...navLinks].map((link) => (
           <a
             href={link.href}
             aria-current={isActive(link.href) ? 'page' : undefined}

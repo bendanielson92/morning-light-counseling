@@ -32,12 +32,14 @@
   --color-ink: #262119;
 }
 
-html {
+/* Scoped to :focus-within so page-to-page navigation isn't affected —
+   iOS Safari keeps the old scroll position on load when this is set on html. */
+html:focus-within {
   scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html:focus-within {
     scroll-behavior: auto;
   }
   *,
