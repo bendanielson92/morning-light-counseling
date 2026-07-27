@@ -16,7 +16,7 @@ interface Props {
 
 const { title, description, noindex = false, extraSchema = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL('/images/brand/og-card.jpg', Astro.site);
+const ogImage = new URL('/images/brand/og-card-glow.jpg', Astro.site);
 
 const businessSchema = {
   '@context': 'https://schema.org',
