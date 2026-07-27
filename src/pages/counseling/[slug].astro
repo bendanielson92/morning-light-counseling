@@ -15,9 +15,23 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: entry.data.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
 ---
 
-<Layout title={`${entry.data.title} | Morning Light Counseling`} description={entry.data.metaDescription}>
+<Layout
+  title={`${entry.data.title} | Morning Light Counseling`}
+  description={entry.data.metaDescription}
+  extraSchema={entry.data.faqs.length > 0 ? [faqSchema] : []}
+>
   <PageHero title={entry.data.title} />
 
   <article class="mx-auto max-w-3xl px-4 py-10 sm:px-6">

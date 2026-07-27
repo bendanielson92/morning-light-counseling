@@ -4,11 +4,27 @@ import PageHero from '../components/PageHero.astro';
 import Prose from '../components/Prose.astro';
 import CtaBand from '../components/CtaBand.astro';
 import about from '../content/singletons/about.json';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Billy Fisher',
+  jobTitle: 'Licensed Professional Counselor',
+  description:
+    'Licensed Professional Counselor in Pennsylvania (License No. PC012790) and founder of Morning Light Counseling Services.',
+  url: new URL('/about', Astro.site).toString(),
+  worksFor: {
+    '@type': 'LocalBusiness',
+    name: 'Morning Light Counseling Services',
+    url: Astro.site?.toString(),
+  },
+};
 ---
 
 <Layout
   title="About Billy | Morning Light Counseling — Manheim, PA"
   description="Billy is a Licensed Professional Counselor in Pennsylvania and founder of Morning Light Counseling, a faith-based practice built exclusively for men."
+  extraSchema={[personSchema]}
 >
   <PageHero title={about.pageTitle} tagline={about.intro} />
 
