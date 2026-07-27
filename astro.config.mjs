@@ -19,6 +19,7 @@ export default defineConfig({
     '/contact-us': { destination: '/contact', status: 301 },
     // Old WordPress artifacts
     '/sitemap_index.xml': { destination: '/sitemap-index.xml', status: 301 },
+    '/sitemap.xml': { destination: '/sitemap-index.xml', status: 301 },
     '/feed': { destination: '/', status: 301 },
     // Retired design preview
     '/home-b': { destination: '/', status: 301 },
